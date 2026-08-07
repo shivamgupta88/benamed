@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# intermediate build artifact - regenerate with: python build_pdf.py
+handbook.html
+
+# working files
+*.tmp
+~$*
+.DS_Store
+Thumbs.db
