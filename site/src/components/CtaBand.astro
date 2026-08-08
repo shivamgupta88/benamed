@@ -1,0 +1,23 @@
+---
+import { site } from '../lib/content';
+
+interface Props {
+  heading?: string;
+  body?: string;
+}
+
+const {
+  heading = 'Find out where you actually stand',
+  body = 'Five prompts against your clinic, run across ChatGPT, Perplexity and Google\u2019s AI mode. You get the screenshots and the likely reason. No charge, no obligation.',
+} = Astro.props;
+---
+
+<section class="section section--flush">
+  <div class="wrap">
+    <div class="cta">
+      <h2>{heading}</h2>
+      <p>{body}</p>
+      <a href="/contact" class="btn btn--primary">{site.primaryCta.label}</a>
+    </div>
+  </div>
+</section>

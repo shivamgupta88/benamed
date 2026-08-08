@@ -1,0 +1,28 @@
+{
+  "brandName": "Be Named First",
+  "domain": "benamedfirst.com",
+  "url": "https://benamedfirst.com",
+  "tagline": "AI Search Visibility",
+  "shortDescription": "AI search visibility for cosmetic dental and aesthetic clinics. Measured, not guessed.",
+  "metaDescription": "When patients ask ChatGPT or Perplexity for the best clinic, three or four get named and everyone else is absent. We measure where you stand across five AI engines, fix what blocks you, and report movement monthly.",
+  "contactEmail": "hello@benamedfirst.com",
+  "bookingUrl": "https://cal.com/benamedfirst/audit",
+  "founderName": "Shivam Gupta",
+  "founderRole": "Founder & AI Search Visibility Consultant",
+  "locale": "en",
+  "engines": [
+    "ChatGPT",
+    "Perplexity",
+    "Google AI Overviews",
+    "Gemini",
+    "Claude"
+  ],
+  "primaryCta": {
+    "label": "Get a free visibility check",
+    "href": "/contact"
+  },
+  "secondaryCta": {
+    "label": "See how the audit works",
+    "href": "/services/ai-visibility-audit"
+  }
+}

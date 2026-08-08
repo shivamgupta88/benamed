@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Page not found"
+  description="That page does not exist."
+  noindex={true}
+>
+  <section class="section section--flush" style="padding-top:4rem">
+    <div class="wrap narrow">
+      <p class="eyebrow">404</p>
+      <h1 style="font-size:var(--fs-3xl);margin-top:0.75rem">
+        That page doesn't exist.
+      </h1>
+      <p class="lede" style="margin-top:1rem">
+        It may have moved, or the link may be wrong.
+      </p>
+
+      <div class="btn-row" style="margin-top:2rem">
+        <a href="/" class="btn btn--primary">Home</a>
+        <a href="/services" class="btn btn--secondary">Services</a>
+        <a href="/glossary" class="btn btn--secondary">Glossary</a>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,54 @@
+---
+import Base from '../../layouts/Base.astro';
+import AnswerBlock from '../../components/AnswerBlock.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { services, servicesFile } from '../../lib/content';
+---
+
+<Base
+  title="Services"
+  description="AI visibility audit, answer engine optimization, generative engine optimization and monthly visibility monitoring. Fixed scope, quoted before work starts."
+>
+  <section class="section section--flush" style="padding-top:2.5rem">
+    <div class="wrap">
+      <Breadcrumbs trail={[{ label: 'Services', href: '/services' }]} />
+      <AnswerBlock
+        heading={servicesFile.hub.heading}
+        answer={servicesFile.hub.answer}
+        eyebrow="What we do"
+        level={1}
+      />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="grid grid--2">
+        {
+          services.map((service) => (
+            <a href={`/services/${service.slug}`} class="card">
+              <span class="badge">{service.badge}</span>
+              <h2 style="font-size:var(--fs-xl);margin-top:0.75rem">{service.name}</h2>
+              <p>{service.summary}</p>
+              <dl style="margin-top:1rem;font-size:var(--fs-sm)">
+                <dt style="color:var(--muted-2);font-size:var(--fs-xs)">Price</dt>
+                <dd style="color:var(--ink);font-weight:600">{service.price}</dd>
+                <dt style="color:var(--muted-2);font-size:var(--fs-xs);margin-top:0.5rem">
+                  Timeline
+                </dt>
+                <dd style="color:var(--muted)">{service.duration}</dd>
+              </dl>
+            </a>
+          ))
+        }
+      </div>
+
+      <p class="note" style="margin-top:2rem;max-width:44rem">
+        {servicesFile.pricingNote}
+      </p>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>

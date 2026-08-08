@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../lib/content';
+---
+
+<Base
+  title="Request received"
+  description="Your visibility check request has been received."
+  noindex={true}
+>
+  <section class="section section--flush" style="padding-top:4rem">
+    <div class="wrap narrow">
+      <p class="eyebrow">Received</p>
+      <h1 style="font-size:var(--fs-3xl);margin-top:0.75rem">
+        Got it — I'll be in touch.
+      </h1>
+
+      <p class="answer" style="margin-top:1.5rem">
+        I'll run five prompts against your clinic across ChatGPT, Perplexity and
+        Google's AI mode, and send you the screenshots along with which
+        competitors appeared. Expect a reply within two working days.
+      </p>
+
+      <p class="note" style="margin-top:2rem">
+        If nothing arrives, check your spam folder, then email me directly at
+        <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>.
+      </p>
+
+      <div class="btn-row" style="margin-top:2rem">
+        <a href="/" class="btn btn--secondary">Back to home</a>
+        <a href="/how-it-works" class="btn btn--secondary">How the work runs</a>
+      </div>
+    </div>
+  </section>
+</Base>

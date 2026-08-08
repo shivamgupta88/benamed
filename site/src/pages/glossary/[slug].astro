@@ -1,0 +1,84 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { absoluteUrl, glossary, site } from '../../lib/content';
+import type { GlossaryTerm } from '../../types/content';
+
+export function getStaticPaths() {
+  return glossary.terms.map((term) => ({
+    params: { slug: term.slug },
+    props: { term },
+  }));
+}
+
+const { term } = Astro.props as { term: GlossaryTerm };
+
+const related = term.related
+  .map((slug) => glossary.terms.find((t) => t.slug === slug))
+  .filter((t): t is GlossaryTerm => Boolean(t));
+
+/* DefinedTerm markup. Definitional content is disproportionately cited by
+   language models, which is why each term gets its own page. */
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTerm',
+  '@id': absoluteUrl(`/glossary/${term.slug}`),
+  name: term.term,
+  description: term.short,
+  url: absoluteUrl(`/glossary/${term.slug}`),
+  inDefinedTermSet: {
+    '@type': 'DefinedTermSet',
+    '@id': `${site.url}/glossary#termset`,
+    name: 'AI search glossary',
+    url: absoluteUrl('/glossary'),
+  },
+};
+---
+
+<Base title={term.term} description={term.short} schemas={[schema]}>
+  <section class="section section--flush" style="padding-top:2.5rem">
+    <div class="wrap narrow">
+      <Breadcrumbs
+        trail={[
+          { label: 'Glossary', href: '/glossary' },
+          { label: term.term, href: `/glossary/${term.slug}` },
+        ]}
+      />
+
+      <p class="eyebrow">Definition</p>
+      <h1 style="font-size:var(--fs-3xl);margin-top:0.75rem">{term.term}</h1>
+
+      <!-- Answer-first: the short definition is self-contained and quotable -->
+      <p class="answer" style="margin-top:1.5rem">{term.short}</p>
+
+      <div class="prose" style="margin-top:2rem">
+        <p>{term.long}</p>
+      </div>
+
+      {
+        related.length > 0 && (
+          <div style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--line)">
+            <h2 style="font-size:var(--fs-sm);text-transform:uppercase;letter-spacing:0.09em;color:var(--muted-2)">
+              Related terms
+            </h2>
+            <ul class="list" style="margin-top:1rem">
+              {related.map((r) => (
+                <li>
+                  <a href={`/glossary/${r.slug}`}>{r.term}</a>
+                  <span style="color:var(--muted)"> — {r.short}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
+
+      <p class="note" style="margin-top:2rem">
+        <a href="/glossary">All glossary terms</a>
+      </p>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>

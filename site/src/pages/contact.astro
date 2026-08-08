@@ -1,0 +1,175 @@
+---
+import Base from '../layouts/Base.astro';
+import AnswerBlock from '../components/AnswerBlock.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { site } from '../lib/content';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Contact',
+  url: `${site.url}/contact`,
+  mainEntity: { '@id': `${site.url}/#organization` },
+};
+---
+
+<Base
+  title="Contact"
+  description="Ask for a free visibility check: five prompts against your clinic across ChatGPT, Perplexity and Google's AI mode, with the screenshots and the likely cause."
+  schemas={[schema]}
+>
+  <section class="section section--flush" style="padding-top:2.5rem">
+    <div class="wrap">
+      <Breadcrumbs trail={[{ label: 'Contact', href: '/contact' }]} />
+
+      <AnswerBlock
+        heading="Get a free visibility check"
+        answer="Send your clinic name and website. I'll run five prompts across ChatGPT, Perplexity and Google's AI mode, and send you the screenshots along with the likely reason for whatever they show. No charge and no obligation to continue."
+        eyebrow="Contact"
+        level={1}
+      />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="grid grid--2">
+        <!--
+          Netlify Forms: the data-netlify attribute makes this work with no
+          backend once deployed. The honeypot field catches basic spam bots
+          without adding a CAPTCHA.
+        -->
+        <form
+          name="visibility-check"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action="/thanks"
+          class="card"
+        >
+          <p hidden>
+            <label>
+              Do not fill this in
+              <input name="bot-field" tabindex="-1" autocomplete="off" />
+            </label>
+          </p>
+
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" required autocomplete="name" />
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required autocomplete="email" />
+          </div>
+
+          <div class="field">
+            <label for="clinic">Clinic or business name</label>
+            <input id="clinic" name="clinic" type="text" required autocomplete="organization" />
+          </div>
+
+          <div class="field">
+            <label for="website">Website</label>
+            <input
+              id="website"
+              name="website"
+              type="url"
+              required
+              placeholder="https://"
+              autocomplete="url"
+            />
+          </div>
+
+          <div class="field">
+            <label for="city">City</label>
+            <input id="city" name="city" type="text" required autocomplete="address-level2" />
+          </div>
+
+          <div class="field">
+            <label for="notes">
+              Anything else <span class="opt">(optional)</span>
+            </label>
+            <textarea id="notes" name="notes" rows="3"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary" style="width:100%">
+            Request the check
+          </button>
+
+          <p class="note" style="margin-top:1rem">
+            Your details are used only to reply. No mailing list, no sharing.
+            See the <a href="/privacy">privacy page</a>.
+          </p>
+        </form>
+
+        <div class="stack">
+          <div>
+            <h2 style="font-size:var(--fs-lg)">Prefer email?</h2>
+            <p class="note" style="margin-top:0.5rem">
+              <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>
+            </p>
+          </div>
+
+          <div>
+            <h2 style="font-size:var(--fs-lg)">What happens next</h2>
+            <ol class="list--num" style="margin-top:1rem">
+              <li>I run five prompts against your clinic across three engines.</li>
+              <li>You get the screenshots, plus which competitors appeared.</li>
+              <li>
+                If it looks worth pursuing, we book 15 minutes. If it does not, I
+                will say so.
+              </li>
+            </ol>
+          </div>
+
+          <div>
+            <h2 style="font-size:var(--fs-lg)">Who this suits</h2>
+            <p class="note" style="margin-top:0.5rem">
+              Cosmetic and implant dentistry, aesthetic clinics and med spas, and
+              adjacent high-value elective healthcare. If a new patient is worth a
+              few hundred rather than a few thousand, this will not pay for itself
+              and I will tell you that.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .field {
+    margin-bottom: var(--sp-4);
+  }
+  .field label {
+    display: block;
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    margin-bottom: var(--sp-2);
+    color: var(--ink);
+  }
+  .opt {
+    color: var(--muted-2);
+    font-weight: 400;
+  }
+  .field input,
+  .field textarea {
+    width: 100%;
+    min-height: 44px;
+    padding: var(--sp-3);
+    font: inherit;
+    font-size: var(--fs-sm);
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+  }
+  .field textarea {
+    resize: vertical;
+  }
+  .field input:focus-visible,
+  .field textarea:focus-visible {
+    border-color: var(--accent);
+  }
+</style>

@@ -1,0 +1,38 @@
+---
+import { navigation, site } from '../lib/content';
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <h2>{site.brandName}</h2>
+        <p class="note" style="max-width:16rem">{site.shortDescription}</p>
+        <p class="note" style="margin-top:0.75rem">
+          <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>
+        </p>
+      </div>
+
+      {
+        navigation.footer.map((col) => (
+          <nav aria-label={col.heading}>
+            <h2>{col.heading}</h2>
+            <ul>
+              {col.links.map((link) => (
+                <li><a href={link.href}>{link.label}</a></li>
+              ))}
+            </ul>
+          </nav>
+        ))
+      }
+    </div>
+
+    <div class="footer__bar">
+      <span>&copy; {year} {site.brandName}</span>
+      <span>
+        No guarantees of rankings or citations. AI answers are non-deterministic.
+      </span>
+    </div>
+  </div>
+</footer>

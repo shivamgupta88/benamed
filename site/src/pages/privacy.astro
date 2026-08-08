@@ -1,0 +1,42 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { legal, site } from '../lib/content';
+
+const doc = legal.privacy;
+---
+
+<Base
+  title={doc.heading}
+  description="What this site collects, how enquiry data is handled, and how client credentials are treated during an engagement."
+>
+  <section class="section section--flush" style="padding-top:2.5rem">
+    <div class="wrap narrow">
+      <Breadcrumbs trail={[{ label: doc.heading, href: '/privacy' }]} />
+
+      <h1 style="font-size:var(--fs-3xl)">{doc.heading}</h1>
+      <p class="note" style="margin-top:0.5rem">
+        Last updated <time datetime={doc.updated}>{doc.updated}</time>
+      </p>
+
+      <p class="answer" style="margin-top:1.5rem">{doc.answer}</p>
+
+      <div class="prose">
+        {
+          doc.sections.map((s) => (
+            <>
+              <h2>{s.title}</h2>
+              <p>{s.body}</p>
+            </>
+          ))
+        }
+
+        <h2>Contact</h2>
+        <p>
+          For any privacy question or request, email
+          <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

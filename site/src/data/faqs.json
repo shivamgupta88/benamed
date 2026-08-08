@@ -1,0 +1,99 @@
+{
+  "heading": "Frequently asked questions",
+  "answer": "The questions that come up on almost every call, answered directly. If something here is not covered, ask and it will get added.",
+
+  "groups": [
+    {
+      "name": "The basics",
+      "items": [
+        {
+          "q": "What is AI search visibility?",
+          "a": "It is whether AI engines name and cite your business when someone asks them a question your business could answer. Unlike a search results page, an AI answer names three or four sources and stops. If you are not in that set, you do not appear at all."
+        },
+        {
+          "q": "How is this different from SEO?",
+          "a": "SEO works to rank you in a list of links so someone clicks through. AI search visibility works to get you named inside a generated answer. They overlap but do not map one-to-one — a page can rank first on Google and still be absent from the AI answer for the same question."
+        },
+        {
+          "q": "Which engines do you measure?",
+          "a": "ChatGPT, Perplexity, Google AI Overviews, Gemini and Claude. Each is measured and reported separately, because when the same prompt runs across four engines the overlap in cited sources is roughly 11%."
+        },
+        {
+          "q": "What are AEO and GEO?",
+          "a": "Answer Engine Optimization is getting your content extracted and shown as the direct answer, which is mostly on-site work. Generative Engine Optimization is getting cited as a source when an engine writes its own answer, which is mostly off-site work. AEO moves faster; GEO is more defensible."
+        }
+      ]
+    },
+    {
+      "name": "Results and timelines",
+      "items": [
+        {
+          "q": "How long until I see results?",
+          "a": "Crawler access changes within days and is verifiable in your server logs in week one. First citations typically appear in four to twelve weeks on lower-competition questions. Consistent visibility across engines takes three to six months."
+        },
+        {
+          "q": "Can you guarantee I will appear in ChatGPT?",
+          "a": "No, and anyone who does is not being straight with you. These systems are non-deterministic — the same question can return different answers on consecutive runs. We control whether engines can reach your content, whether it can be extracted, and whether credible sources reference you. We report the outcome honestly either way."
+        },
+        {
+          "q": "Why is there a three-month minimum on monitoring?",
+          "a": "Because the validation cycle for this work is itself three to six months. A single month of data cannot distinguish real movement from normal fluctuation, so a shorter engagement would take your money without being able to tell you anything."
+        },
+        {
+          "q": "What if nothing moves?",
+          "a": "You will see that clearly in the monthly report, because we report flat and declining months as plainly as good ones. A dip that is explained keeps a working relationship; a dip that is hidden ends it the moment it is discovered."
+        }
+      ]
+    },
+    {
+      "name": "Working together",
+      "items": [
+        {
+          "q": "What do I get from the audit?",
+          "a": "A baseline mention rate and citation share per engine, your position against three named competitors, screenshot evidence of every gap, a diagnosis across crawler access, content extractability and off-site authority, and a prioritised fix roadmap. The roadmap is yours to keep and execute anywhere."
+        },
+        {
+          "q": "Do I have to buy implementation after the audit?",
+          "a": "No. The audit is deliberately scoped so it stands alone. You can execute the roadmap in-house, give it to your existing agency, or do nothing with it. Most clients continue, but nothing about the audit depends on that."
+        },
+        {
+          "q": "Do you need access to my website?",
+          "a": "For implementation, yes — either CMS access or a working relationship with whoever maintains the site. If your site is on a platform you cannot modify, we will tell you before taking your money, because the on-site half of the work would be impossible."
+        },
+        {
+          "q": "Do you work with businesses outside dentistry and aesthetics?",
+          "a": "The prompt sets, off-site playbooks and competitor knowledge are built for cosmetic dental and aesthetic clinics, which is where the work is sharpest. Adjacent high-value elective healthcare is a reasonable fit. Outside that, we would be learning on your budget and would say so."
+        },
+        {
+          "q": "Will this pay for itself?",
+          "a": "That depends entirely on what a new patient is worth to you. If one new implant or veneer case is worth several thousand, the audit costs a fraction of one conversion. If a new customer is worth a few hundred, it will not pay for itself and we will tell you that rather than take the work."
+        }
+      ]
+    },
+    {
+      "name": "Method",
+      "items": [
+        {
+          "q": "How exactly do you measure this?",
+          "a": "A fixed set of 40 to 50 prompts, built from the questions patients actually ask. Each is run three times per engine because outputs are non-deterministic. Conditions are held constant — logged out, no history, consistent location, same time of week. Two numbers are recorded: how often you are named, and how often you are cited with a link."
+        },
+        {
+          "q": "Why three runs per prompt?",
+          "a": "Because one run is not evidence. Ask an AI engine the same question twice and you can get two different answers citing different sources. Three runs per prompt per engine is the minimum that separates a real pattern from a coincidence."
+        },
+        {
+          "q": "Why do you not average results across engines?",
+          "a": "Because the engines barely overlap — roughly 11% of cited domains are shared when the same prompt runs across four of them. A blended figure would hide the fact that you might be visible on Perplexity and invisible on ChatGPT, which need different work."
+        },
+        {
+          "q": "Can the prompt set change during an engagement?",
+          "a": "No. The prompt set is frozen once you sign off, because comparability is the entire value. New prompts are added as a new version, documented and reported separately, never merged retroactively into the baseline."
+        },
+        {
+          "q": "Do you use a tool for this?",
+          "a": "The measurement is run manually and deliberately so. Tools in this space are improving but a manual run means every number can be traced back to a specific answer on a specific date, and it means we can tell when a tool is wrong."
+        }
+      ]
+    }
+  ]
+}

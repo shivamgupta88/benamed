@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img">
+  <title>Be Named First</title>
+  <style>
+    .top { fill: #c2410c; }
+    .rest { fill: #14171a; }
+    @media (prefers-color-scheme: dark) {
+      .top { fill: #fb923c; }
+      .rest { fill: #f2f4f6; }
+    }
+  </style>
+  <rect class="top" x="2" y="4" width="28" height="6" rx="3"/>
+  <rect class="rest" x="2" y="13" width="19" height="6" rx="3" opacity="0.32"/>
+  <rect class="rest" x="2" y="22" width="11" height="6" rx="3" opacity="0.32"/>
+</svg>

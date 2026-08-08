@@ -1,0 +1,137 @@
+---
+import Base from '../../layouts/Base.astro';
+import AnswerBlock from '../../components/AnswerBlock.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { absoluteUrl, services, site } from '../../lib/content';
+import type { Service } from '../../types/content';
+
+export function getStaticPaths() {
+  return services.map((service) => ({
+    params: { slug: service.slug },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props as { service: Service };
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: service.name,
+  description: service.answer,
+  url: absoluteUrl(`/services/${service.slug}`),
+  serviceType: service.name,
+  provider: { '@id': `${site.url}/#organization` },
+  offers: {
+    '@type': 'Offer',
+    priceCurrency: 'USD',
+    description: `${service.price} — ${service.priceNote}`,
+    availability: 'https://schema.org/InStock',
+  },
+};
+
+const howTo = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: `How ${service.name} works`,
+  step: service.process.map((step, i) => ({
+    '@type': 'HowToStep',
+    position: i + 1,
+    name: step.step,
+    text: step.detail,
+  })),
+};
+---
+
+<Base
+  title={service.name}
+  description={service.summary}
+  schemas={[schema, howTo]}
+>
+  <section class="section section--flush" style="padding-top:2.5rem">
+    <div class="wrap">
+      <Breadcrumbs
+        trail={[
+          { label: 'Services', href: '/services' },
+          { label: service.name, href: `/services/${service.slug}` },
+        ]}
+      />
+
+      <span class="badge">{service.badge}</span>
+      <div style="margin-top:1rem">
+        <AnswerBlock heading={service.name} answer={service.answer} level={1} />
+      </div>
+
+      <div class="grid grid--3" style="margin-top:2.5rem">
+        <div class="card card--alt">
+          <h3 style="font-size:var(--fs-sm);color:var(--muted-2);font-weight:600">Price</h3>
+          <p style="color:var(--ink);font-size:var(--fs-xl);font-weight:600;margin-top:0.25rem">
+            {service.price}
+          </p>
+          <p style="margin-top:0.5rem">{service.priceNote}</p>
+        </div>
+        <div class="card card--alt">
+          <h3 style="font-size:var(--fs-sm);color:var(--muted-2);font-weight:600">Timeline</h3>
+          <p style="color:var(--ink);margin-top:0.25rem">{service.duration}</p>
+        </div>
+        {
+          service.inScope && (
+            <div class="card card--alt">
+              <h3 style="font-size:var(--fs-sm);color:var(--muted-2);font-weight:600">Scope</h3>
+              <p style="margin-top:0.25rem">
+                In: {service.inScope.join(', ')}.
+                {service.outOfScope && ` Not included: ${service.outOfScope.join(', ')}.`}
+              </p>
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2>What you get</h2>
+      <ul class="list" style="margin-top:1.5rem;max-width:44rem">
+        {service.deliverables.map((item) => <li>{item}</li>)}
+      </ul>
+      <p class="note" style="margin-top:1.5rem;max-width:44rem">{service.note}</p>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="wrap">
+      <h2>How it runs</h2>
+      <ol class="list--num" style="margin-top:1.5rem;max-width:44rem">
+        {
+          service.process.map((step) => (
+            <li>
+              <strong>{step.step}.</strong> {step.detail}
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2>Other services</h2>
+      <div class="grid grid--3" style="margin-top:1.5rem">
+        {
+          services
+            .filter((s) => s.slug !== service.slug)
+            .map((s) => (
+              <a href={`/services/${s.slug}`} class="card">
+                <h3 style="font-size:var(--fs-lg)">{s.name}</h3>
+                <p>{s.summary}</p>
+              </a>
+            ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>

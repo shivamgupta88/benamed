@@ -1,0 +1,51 @@
+{
+  "heading": "About",
+  "answer": "Be Named First is a specialist practice, not an agency. One person does the measurement, the technical work and the reporting, which is why the client list is deliberately small and the focus is deliberately narrow.",
+
+  "founder": {
+    "name": "Shivam Gupta",
+    "role": "Founder & AI Search Visibility Consultant",
+    "bio": [
+      "I came to this from software engineering rather than marketing, and that turns out to matter.",
+      "My background is enterprise software with a focus on document accessibility and machine-readable content structure — WCAG Level AA compliance work, tagged document generation, semantic structure, reading order, table header markup, and making enterprise reporting output readable by screen readers.",
+      "That work is closer to AI search visibility than it sounds. Making content readable by a screen reader and making it readable by an AI crawler are close to the same problem: structure, semantics and hierarchy determine whether a machine can extract meaning from a page. The consumer changed; the discipline did not.",
+      "Most people selling AI visibility come from marketing and cannot do the technical half — the crawler configuration, the structured data, the server log analysis, the rendering fixes. That half is where a large share of the actual problems live."
+    ]
+  },
+
+  "principles": {
+    "heading": "How this practice operates",
+    "items": [
+      {
+        "title": "No guarantees",
+        "body": "Not rankings, not positions, not citations. AI answers are non-deterministic, so a guarantee would be a knowingly false promise. What is offered instead is a documented process and honest measurement of what it produced."
+      },
+      {
+        "title": "Measurement before work",
+        "body": "Nothing is changed until a baseline exists. Without one, any later claim of improvement is an assertion. The prompt set is signed off before measurement so the scope of what was measured is never in dispute."
+      },
+      {
+        "title": "Bad months get reported",
+        "body": "Flat and declining cycles are reported as plainly as good ones, with an explanation. A dip that is explained keeps a working relationship. A dip that is hidden ends it the moment it is found."
+      },
+      {
+        "title": "Every statistic carries a source",
+        "body": "Any figure quoted here or in a client report links to where it came from. If a claim cannot be sourced, it does not get made."
+      },
+      {
+        "title": "Narrow on purpose",
+        "body": "Cosmetic dental and aesthetic clinics, and adjacent high-value elective healthcare. Working one vertical deeply means the prompt sets, the competitor knowledge and the off-site playbooks compound. Outside it, the work would be learned on a client's budget."
+      },
+      {
+        "title": "Honest disqualification",
+        "body": "If a new customer is worth a few hundred, or the site cannot be modified, this will not work and that gets said before any money changes hands rather than after."
+      }
+    ]
+  },
+
+  "transparency": {
+    "heading": "Where this practice currently stands",
+    "answer": "This is a new practice. There is no client roster to show yet, and inventing one would be both dishonest and easy to check.",
+    "body": "What can be evaluated instead: the measurement method is documented in detail, the timeline expectations set out here are drawn from published research with sources given, and the audit is deliberately scoped so its output is useful whether or not the engagement continues. Ask for a free check on your own clinic and judge the work from that rather than from a testimonial."
+  }
+}

@@ -1,0 +1,81 @@
+---
+import Base from '../layouts/Base.astro';
+import AnswerBlock from '../components/AnswerBlock.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { about, site } from '../lib/content';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': `${site.url}/about#person`,
+  name: about.founder.name,
+  jobTitle: about.founder.role,
+  worksFor: { '@id': `${site.url}/#organization` },
+  knowsAbout: [
+    'Answer Engine Optimization',
+    'Generative Engine Optimization',
+    'Structured data',
+    'Web accessibility',
+    'Technical SEO',
+  ],
+};
+---
+
+<Base
+  title="About"
+  description="A specialist practice, not an agency. Built from an engineering background in document accessibility and machine-readable content structure."
+  schemas={[schema]}
+>
+  <section class="section section--flush" style="padding-top:2.5rem">
+    <div class="wrap">
+      <Breadcrumbs trail={[{ label: 'About', href: '/about' }]} />
+      <AnswerBlock
+        heading={about.heading}
+        answer={about.answer}
+        eyebrow="About"
+        level={1}
+      />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap narrow">
+      <h2>{about.founder.name}</h2>
+      <p class="note" style="margin-top:0.25rem">{about.founder.role}</p>
+
+      <div class="prose" style="margin-top:1.5rem">
+        {about.founder.bio.map((para) => <p>{para}</p>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="wrap">
+      <h2>{about.principles.heading}</h2>
+      <div class="grid grid--2" style="margin-top:1.5rem">
+        {
+          about.principles.items.map((item) => (
+            <div class="card">
+              <h3 style="font-size:var(--fs-lg)">{item.title}</h3>
+              <p>{item.body}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap narrow">
+      <AnswerBlock
+        heading={about.transparency.heading}
+        answer={about.transparency.answer}
+      >
+        <p style="max-width:44rem;color:var(--ink-2)">{about.transparency.body}</p>
+      </AnswerBlock>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>

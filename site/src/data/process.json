@@ -1,0 +1,112 @@
+{
+  "heading": "How it works",
+  "answer": "Five phases. Measurement first, because without a baseline nothing later can be proven. Then the fast technical fixes, then on-site content work, then off-site authority building, then monthly measurement that keeps the whole thing honest.",
+
+  "phases": [
+    {
+      "number": "0",
+      "name": "Baseline",
+      "timing": "Week 1-2",
+      "answer": "We establish exactly where you stand before touching anything. This is the paid audit, and it is the foundation for every claim made later.",
+      "steps": [
+        "Kickoff call: your services, your three named competitors, your target area",
+        "Build 40-50 prompts from the questions patients actually ask",
+        "You sign off on the prompt set before any measurement happens",
+        "Run three passes per prompt across five engines under fixed conditions",
+        "Screenshot every result where a competitor appears and you do not",
+        "Technical, extractability and off-site audits",
+        "Prioritised roadmap, delivered on a walkthrough call"
+      ],
+      "outcome": "A defensible baseline and a ranked fix list."
+    },
+    {
+      "number": "1",
+      "name": "Retrieval unblock",
+      "timing": "Week 3",
+      "answer": "The fastest work in the engagement. Crawler access changes propagate within days, and the effect is visible in your own server logs almost immediately.",
+      "steps": [
+        "Configure robots.txt for every major AI crawler",
+        "Publish llms.txt",
+        "Remove rendering blockers so content appears in raw HTML",
+        "Fix accidental noindex, broken canonicals and sitemap errors",
+        "Implement core structured data",
+        "Correct entity consistency across the web",
+        "Baseline and then monitor AI crawler hits in your logs"
+      ],
+      "outcome": "Verifiable proof, in week one, that engines are now reaching you."
+    },
+    {
+      "number": "2",
+      "name": "On-site answer work",
+      "timing": "Week 4-6",
+      "answer": "Restructuring content so an engine can lift a clean answer from it. Every section leads with a direct answer, headings mirror real questions, and claims stand on their own.",
+      "steps": [
+        "Map prompts to pages and identify gaps",
+        "Rewrite key pages answer-first",
+        "Reshape headings into patient-question form",
+        "Build FAQ blocks with valid schema",
+        "Convert comparison content to semantic tables",
+        "Create definitional pages engines can quote directly",
+        "Attribute every statistic and surface last-updated dates"
+      ],
+      "outcome": "Content an engine can extract without guessing."
+    },
+    {
+      "number": "3",
+      "name": "Off-site authority",
+      "timing": "Week 5 onward",
+      "answer": "Runs in parallel, not after. This is the slower half — earning the independent references and consistent presence that make an engine willing to name you.",
+      "steps": [
+        "Claim and correct every directory and platform listing",
+        "Build review presence on the platforms engines actually read",
+        "Outreach for inclusion in the third-party lists engines cite",
+        "Publish an original data asset from your own practice",
+        "Editorial and digital PR placement",
+        "Knowledge base assessment where notability is genuinely met"
+      ],
+      "outcome": "Trust signals that are hard to build and hard to displace."
+    },
+    {
+      "number": "4",
+      "name": "Monthly measurement",
+      "timing": "Month 2 onward",
+      "answer": "The same prompt set, the same conditions, every month. This is what turns the work into something you can actually judge.",
+      "steps": [
+        "Re-run the full prompt set under identical conditions",
+        "Compute movement against baseline and against last cycle",
+        "Track competitor movement",
+        "Review crawler activity",
+        "Report per engine, never averaged",
+        "Set next cycle's priorities"
+      ],
+      "outcome": "A trend line instead of an anecdote."
+    }
+  ],
+
+  "leadingIndicators": {
+    "heading": "What you will see before citations move",
+    "answer": "Citations take four to twelve weeks, which is a long time to wait for a sign of life. So we report the things that move earlier and can be independently verified.",
+    "items": [
+      {
+        "title": "AI crawler activity in your logs",
+        "body": "The clearest week-one evidence. GPTBot alone has been observed hitting sites thousands of times a day, so once access is unblocked the change shows up almost immediately. Before and after, from your own server."
+      },
+      {
+        "title": "Structured data validation",
+        "body": "Before and after, against Google's own validator. Either it passes or it does not."
+      },
+      {
+        "title": "Prompt-set coverage",
+        "body": "Being mentioned without being cited is still movement. We report it rather than waiting for the perfect number."
+      },
+      {
+        "title": "Snippets and People Also Ask",
+        "body": "These respond faster than LLM citations. It is the speed advantage of the on-site half of the work."
+      },
+      {
+        "title": "Placements secured",
+        "body": "A third-party reference is reportable the day it goes live, before any engine has cited it."
+      }
+    ]
+  }
+}

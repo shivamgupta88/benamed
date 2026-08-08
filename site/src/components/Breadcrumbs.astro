@@ -1,0 +1,46 @@
+---
+/**
+ * Visible breadcrumbs plus matching BreadcrumbList structured data, so the
+ * hierarchy is available to both readers and engines.
+ */
+import { absoluteUrl } from '../lib/content';
+import type { NavLink } from '../types/content';
+
+interface Props {
+  trail: NavLink[];
+}
+const { trail } = Astro.props;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { name: 'Home', href: '/' },
+    ...trail,
+  ].map((item, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: item.label ?? 'Home',
+    item: absoluteUrl(item.href),
+  })),
+};
+---
+
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/">Home</a></li>
+    {
+      trail.map((item, i) => (
+        <li>
+          {i === trail.length - 1 ? (
+            <span aria-current="page">{item.label}</span>
+          ) : (
+            <a href={item.href}>{item.label}</a>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+</nav>
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />

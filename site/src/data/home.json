@@ -1,0 +1,97 @@
+{
+  "hero": {
+    "eyebrow": "AI Search Visibility",
+    "headline": "Your competitors are in the AI answer. You're not.",
+    "subhead": "When a patient asks ChatGPT or Perplexity for the best clinic in your city, they get a written answer naming three or four practices. Everyone else isn't ranked low. They're absent.",
+    "note": "There is no Search Console for AI answers, so most clinics never find out."
+  },
+
+  "problem": {
+    "heading": "What actually happens when someone asks an AI for a recommendation",
+    "answer": "The engine returns one written answer that names three or four businesses and cites a handful of sources. There is no page two. If your clinic isn't in that set, it does not appear at all — and nothing in your analytics will tell you it happened.",
+    "points": [
+      {
+        "title": "It's a shortlist, not a ranking",
+        "body": "Ten blue links let you sit at position seven and still get found. An AI answer names a few businesses and stops. Being eleventh and being invisible are the same outcome."
+      },
+      {
+        "title": "There's no dashboard",
+        "body": "Google gives you Search Console. AI answers give you nothing — no impressions, no positions, no citation report. Most clinics discover the problem by accident."
+      },
+      {
+        "title": "It's usually technical, not reputational",
+        "body": "Excellent practices with strong Google rankings are frequently invisible in AI answers. The causes are normally crawler access, content structure and inconsistent business data."
+      },
+      {
+        "title": "Each engine behaves differently",
+        "body": "Run the same question across four engines and the overlap in which sources get cited is roughly 11%. Winning on one tells you very little about the others."
+      }
+    ]
+  },
+
+  "disciplines": {
+    "heading": "Two different jobs get called AI SEO",
+    "answer": "Answer Engine Optimization makes your content the answer an engine extracts and displays. Generative Engine Optimization makes you a source the engine cites when it writes its own answer. They target different surfaces, need different work, and move on different timelines.",
+    "comparison": {
+      "caption": "AEO and GEO compared",
+      "columns": ["", "AEO", "GEO"],
+      "rows": [
+        ["Full name", "Answer Engine Optimization", "Generative Engine Optimization"],
+        ["Goal", "Be the extracted answer", "Be a cited source"],
+        ["Surfaces", "Featured snippets, People Also Ask, AI Overviews, voice", "ChatGPT, Claude, Perplexity, Gemini"],
+        ["Mechanism", "Extraction — the engine lifts your text", "Synthesis — the engine blends sources and you are one"],
+        ["Where the work is", "Mostly on your site", "Mostly off your site"],
+        ["Measured by", "Whether you were extracted", "Citation share across many prompts"],
+        ["Speed", "Faster", "Slower, more defensible"]
+      ]
+    },
+    "closing": "Simplest way to hold the difference: AEO wants you to be the answer. GEO wants you to be in the set of sources the answer was built from."
+  },
+
+  "measurement": {
+    "heading": "Why measurement is the whole point",
+    "answer": "AI answers are non-deterministic — ask the same question twice and you can get two different answers citing different sources. A single check proves nothing. The only reliable method is a fixed prompt set, run repeatedly under controlled conditions, reported per engine.",
+    "method": [
+      "A fixed set of 40 to 50 prompts, built from the sentences your patients actually type",
+      "Three runs per prompt per engine, because the same question does not return the same answer twice",
+      "Controlled conditions: logged out, no history, consistent location, same time of week",
+      "Two numbers recorded — how often you are named, and how often you are cited with a link",
+      "Reported per engine and never averaged, because the engines barely overlap",
+      "The same set, the same conditions, every month"
+    ],
+    "closing": "It is deliberately unglamorous. It is also the only way to tell real movement apart from a lucky screenshot."
+  },
+
+  "honesty": {
+    "heading": "What we will not tell you",
+    "answer": "That we can guarantee a position. These are non-deterministic systems and no honest vendor can promise you a ranking inside ChatGPT. We sell a rigorous process and transparent measurement of what it produced.",
+    "timeline": {
+      "caption": "Realistic timeline",
+      "columns": ["When", "What happens"],
+      "rows": [
+        ["Days 1-7", "Crawler access and indexability corrected. Verifiable in your own server logs."],
+        ["Weeks 1-2", "First mentions may appear. Volatile — a signal, not a win."],
+        ["Weeks 4-8", "Early movement. First mentions commonly land in this window."],
+        ["Weeks 4-12", "Citations begin on specific, lower-competition questions."],
+        ["Months 3-6", "Repeat citations and consistent visibility across engines."]
+      ]
+    },
+    "closing": "Month one is plumbing. Months two and three are when citations start. Months three to six are when visibility becomes consistent. Anyone promising faster is selling you something."
+  },
+
+  "audience": {
+    "heading": "Who this is for",
+    "answer": "Practices where one new patient is worth thousands, competition is local, and patients research heavily before booking. That combination is what makes AI visibility worth paying attention to.",
+    "verticals": [
+      "Cosmetic and implant dentistry",
+      "Aesthetic clinics and med spas",
+      "Elective and private healthcare"
+    ],
+    "notFor": "If a new customer is worth a few hundred, this will not pay for itself and we will tell you so."
+  },
+
+  "finalCta": {
+    "heading": "Find out where you actually stand",
+    "body": "Five prompts against your clinic, run across ChatGPT, Perplexity and Google's AI mode. You get the screenshots and the likely reason. No charge, no obligation."
+  }
+}

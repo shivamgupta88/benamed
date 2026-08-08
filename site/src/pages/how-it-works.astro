@@ -1,0 +1,107 @@
+---
+import Base from '../layouts/Base.astro';
+import AnswerBlock from '../components/AnswerBlock.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CtaBand from '../components/CtaBand.astro';
+import DataTable from '../components/DataTable.astro';
+import { home, processFile } from '../lib/content';
+
+const howTo = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How AI search visibility work is delivered',
+  description: processFile.answer,
+  step: processFile.phases.map((phase, i) => ({
+    '@type': 'HowToStep',
+    position: i + 1,
+    name: `Phase ${phase.number}: ${phase.name}`,
+    text: phase.answer,
+    itemListElement: phase.steps.map((s) => ({
+      '@type': 'HowToDirection',
+      text: s,
+    })),
+  })),
+};
+---
+
+<Base
+  title="How it works"
+  description="Five phases: baseline measurement, retrieval unblock, on-site answer work, off-site authority, then monthly measurement. With the leading indicators you see before citations move."
+  schemas={[howTo]}
+>
+  <section class="section section--flush" style="padding-top:2.5rem">
+    <div class="wrap">
+      <Breadcrumbs trail={[{ label: 'How it works', href: '/how-it-works' }]} />
+      <AnswerBlock
+        heading={processFile.heading}
+        answer={processFile.answer}
+        eyebrow="Process"
+        level={1}
+      />
+    </div>
+  </section>
+
+  {
+    processFile.phases.map((phase, i) => (
+      <section class={`section ${i % 2 === 1 ? 'section--alt' : ''}`}>
+        <div class="wrap">
+          <div style="display:flex;gap:1rem;align-items:baseline;flex-wrap:wrap">
+            <span
+              style="font-size:var(--fs-sm);font-weight:600;color:var(--accent);border:1px solid var(--accent-line);background:var(--accent-soft);border-radius:999px;padding:0.15rem 0.6rem"
+            >
+              Phase {phase.number}
+            </span>
+            <span class="note">{phase.timing}</span>
+          </div>
+
+          <div style="margin-top:1rem">
+            <AnswerBlock heading={phase.name} answer={phase.answer} />
+          </div>
+
+          <ul class="list" style="margin-top:1.5rem;max-width:44rem">
+            {phase.steps.map((step) => <li>{step}</li>)}
+          </ul>
+
+          <p
+            style="margin-top:1.25rem;max-width:44rem;font-size:var(--fs-sm);color:var(--ink-2)"
+          >
+            <strong>Outcome:</strong> {phase.outcome}
+          </p>
+        </div>
+      </section>
+    ))
+  }
+
+  <section class="section">
+    <div class="wrap">
+      <AnswerBlock
+        heading={processFile.leadingIndicators.heading}
+        answer={processFile.leadingIndicators.answer}
+      >
+        <div class="grid grid--2" style="margin-top:2rem">
+          {
+            processFile.leadingIndicators.items.map((item) => (
+              <div class="card">
+                <h3 style="font-size:var(--fs-lg)">{item.title}</h3>
+                <p>{item.body}</p>
+              </div>
+            ))
+          }
+        </div>
+      </AnswerBlock>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="wrap">
+      <AnswerBlock heading={home.honesty.heading} answer={home.honesty.answer}>
+        <div style="margin-top:2rem">
+          <DataTable data={home.honesty.timeline} />
+        </div>
+        <p class="lede" style="margin-top:1.5rem">{home.honesty.closing}</p>
+      </AnswerBlock>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>

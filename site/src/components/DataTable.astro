@@ -1,0 +1,59 @@
+---
+/**
+ * A real semantic table with scoped headers, wrapped in a scroll container so
+ * it stays usable on narrow screens. Engines extract genuine tables far more
+ * reliably than div grids, so this is never faked with CSS.
+ */
+import type { TableBlock } from '../types/content';
+
+interface Props {
+  data: TableBlock;
+  rowHeaders?: boolean;
+}
+
+const { data, rowHeaders = true } = Astro.props;
+---
+
+<div class="table-wrap">
+  <table>
+    <caption>{data.caption}</caption>
+    <thead>
+      <tr>
+        {
+          data.columns.map((col) => (
+            <th scope="col">{col || <span class="sr-only">Attribute</span>}</th>
+          ))
+        }
+      </tr>
+    </thead>
+    <tbody>
+      {
+        data.rows.map((row) => (
+          <tr>
+            {row.map((cell, i) =>
+              i === 0 && rowHeaders ? (
+                <th scope="row">{cell}</th>
+              ) : (
+                <td>{cell}</td>
+              )
+            )}
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>

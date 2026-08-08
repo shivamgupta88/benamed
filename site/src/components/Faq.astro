@@ -1,0 +1,26 @@
+---
+/**
+ * Accordion built on details/summary so it works with JavaScript disabled.
+ * Content is always present in the HTML, which matters because an engine must
+ * be able to read the answers without executing anything.
+ */
+import type { FaqItem } from '../types/content';
+
+interface Props {
+  items: FaqItem[];
+}
+const { items } = Astro.props;
+---
+
+<div class="faq">
+  {
+    items.map((item) => (
+      <details>
+        <summary>{item.q}</summary>
+        <div class="faq__body">
+          <p>{item.a}</p>
+        </div>
+      </details>
+    ))
+  }
+</div>

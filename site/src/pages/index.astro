@@ -1,0 +1,198 @@
+---
+import Base from '../layouts/Base.astro';
+import AnswerBlock from '../components/AnswerBlock.astro';
+import DataTable from '../components/DataTable.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+import {
+  absoluteUrl,
+  faqs,
+  getStat,
+  home,
+  services,
+  site,
+} from '../lib/content';
+
+const heroStats = ['ai-search-growth', 'citation-ctr', 'engine-overlap'].map(getStat);
+const topFaqs = faqs.groups[0].items.concat(faqs.groups[1].items.slice(0, 2));
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: topFaqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Services',
+  itemListElement: services.map((s, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'Service',
+      name: s.name,
+      description: s.summary,
+      url: absoluteUrl(`/services/${s.slug}`),
+      provider: { '@id': `${site.url}/#organization` },
+    },
+  })),
+};
+---
+
+<Base
+  title={`${site.brandName} — ${site.tagline} for dental and aesthetic clinics`}
+  description={site.metaDescription}
+  schemas={[faqSchema, serviceSchema]}
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">{home.hero.eyebrow}</p>
+      <h1>{home.hero.headline}</h1>
+      <p class="lede">{home.hero.subhead}</p>
+
+      <div class="btn-row">
+        <a href="/contact" class="btn btn--primary">{site.primaryCta.label}</a>
+        <a href={site.secondaryCta.href} class="btn btn--secondary">
+          {site.secondaryCta.label}
+        </a>
+      </div>
+
+      <p class="hero__note">{home.hero.note}</p>
+    </div>
+  </section>
+
+  <!-- Sourced numbers -->
+  <section class="section section--flush section--alt" style="border-top:none">
+    <div class="wrap">
+      <div class="grid grid--3">
+        {
+          heroStats.map((stat) => (
+            <div class="stat">
+              <span class="stat__value">{stat.value}</span>
+              <span class="stat__label">{stat.label}</span>
+              <span class="stat__source">
+                Source: <a href={stat.sourceUrl} rel="nofollow noopener" target="_blank">{stat.source}</a>
+              </span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section class="section">
+    <div class="wrap">
+      <AnswerBlock heading={home.problem.heading} answer={home.problem.answer}>
+        <div class="grid grid--2" style="margin-top:2rem">
+          {
+            home.problem.points.map((point) => (
+              <div class="card">
+                <h3>{point.title}</h3>
+                <p>{point.body}</p>
+              </div>
+            ))
+          }
+        </div>
+      </AnswerBlock>
+    </div>
+  </section>
+
+  <!-- AEO vs GEO -->
+  <section class="section section--alt">
+    <div class="wrap">
+      <AnswerBlock
+        heading={home.disciplines.heading}
+        answer={home.disciplines.answer}
+      >
+        <div style="margin-top:2rem">
+          <DataTable data={home.disciplines.comparison} />
+        </div>
+        <p class="lede" style="margin-top:1.5rem">{home.disciplines.closing}</p>
+      </AnswerBlock>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section">
+    <div class="wrap">
+      <AnswerBlock heading="What we do" answer={services[0].answer}>
+        <div class="grid grid--2" style="margin-top:2rem">
+          {
+            services.map((service) => (
+              <a href={`/services/${service.slug}`} class="card">
+                <span class="badge">{service.badge}</span>
+                <h3 style="margin-top:0.75rem">{service.name}</h3>
+                <p>{service.summary}</p>
+                <p style="margin-top:0.75rem;color:var(--ink);font-weight:600">
+                  {service.price}
+                </p>
+              </a>
+            ))
+          }
+        </div>
+      </AnswerBlock>
+    </div>
+  </section>
+
+  <!-- Measurement -->
+  <section class="section section--alt">
+    <div class="wrap">
+      <AnswerBlock
+        heading={home.measurement.heading}
+        answer={home.measurement.answer}
+      >
+        <ul class="list--num" style="margin-top:2rem;max-width:44rem">
+          {home.measurement.method.map((step) => <li>{step}</li>)}
+        </ul>
+        <p class="note" style="max-width:44rem">{home.measurement.closing}</p>
+      </AnswerBlock>
+    </div>
+  </section>
+
+  <!-- Honest timeline -->
+  <section class="section">
+    <div class="wrap">
+      <AnswerBlock heading={home.honesty.heading} answer={home.honesty.answer}>
+        <div style="margin-top:2rem">
+          <DataTable data={home.honesty.timeline} />
+        </div>
+        <p class="lede" style="margin-top:1.5rem">{home.honesty.closing}</p>
+      </AnswerBlock>
+    </div>
+  </section>
+
+  <!-- Audience -->
+  <section class="section section--alt">
+    <div class="wrap">
+      <AnswerBlock heading={home.audience.heading} answer={home.audience.answer}>
+        <ul class="list" style="margin-top:1.5rem">
+          {home.audience.verticals.map((v) => <li>{v}</li>)}
+        </ul>
+        <p class="note" style="max-width:44rem">{home.audience.notFor}</p>
+      </AnswerBlock>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="wrap">
+      <AnswerBlock heading="Common questions" answer={faqs.answer}>
+        <div style="margin-top:2rem">
+          <Faq items={topFaqs} />
+        </div>
+        <p class="note" style="margin-top:1rem">
+          <a href="/faq">See all questions</a>
+        </p>
+      </AnswerBlock>
+    </div>
+  </section>
+
+  <CtaBand heading={home.finalCta.heading} body={home.finalCta.body} />
+</Base>

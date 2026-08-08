@@ -1,0 +1,20 @@
+{
+  "name": "benamedfirst-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Marketing site for Be Named First - AI search visibility consultancy",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "astro": "5.7.5",
+    "@astrojs/sitemap": "3.3.1"
+  },
+  "devDependencies": {
+    "typescript": "5.8.3"
+  }
+}

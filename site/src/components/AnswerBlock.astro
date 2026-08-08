@@ -1,0 +1,25 @@
+---
+/**
+ * The answer-first AEO pattern: a heading followed immediately by a direct,
+ * self-contained answer. Every content section on the site uses this, because
+ * it is what makes a passage extractable without surrounding context.
+ */
+interface Props {
+  heading: string;
+  answer: string;
+  /** Use 1 when this block is the page title, so every page has exactly one h1. */
+  level?: 1 | 2 | 3;
+  id?: string;
+  eyebrow?: string;
+}
+
+const { heading, answer, level = 2, id, eyebrow } = Astro.props;
+const Heading = `h${level}` as 'h1' | 'h2' | 'h3';
+---
+
+<div class="stack">
+  {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+  <Heading id={id}>{heading}</Heading>
+  <p class="answer">{answer}</p>
+  <slot />
+</div>

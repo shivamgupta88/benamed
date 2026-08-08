@@ -1,0 +1,73 @@
+{
+  "privacy": {
+    "heading": "Privacy",
+    "updated": "2026-08-07",
+    "answer": "This site collects as little as possible. There are no tracking cookies, no advertising pixels and no third-party analytics that identify you. The only personal data handled is what you choose to send when you get in touch.",
+    "sections": [
+      {
+        "title": "What is collected",
+        "body": "If you email or use the contact form, we receive what you send: typically your name, email address, business name and website. Nothing else is collected automatically beyond standard server request logs kept by the hosting provider."
+      },
+      {
+        "title": "Cookies and analytics",
+        "body": "This site sets no tracking or advertising cookies. If privacy-friendly, cookie-free analytics are added in future, this page will be updated before they go live."
+      },
+      {
+        "title": "How your information is used",
+        "body": "Only to reply to you and to carry out work you have asked for. Your details are not sold, rented or shared for marketing, and you will not be added to a mailing list without asking for it."
+      },
+      {
+        "title": "Client data during an engagement",
+        "body": "Engagements may involve access to your website, content management system, server logs or analytics. Credentials are stored in a password manager, never in plain text or in chat, and access is returned or revoked when the work ends. Your data is never used to train any model."
+      },
+      {
+        "title": "Retention",
+        "body": "Enquiry correspondence is kept while there is a reasonable prospect of working together, and for the period required for tax and accounting purposes thereafter. You can ask for your details to be deleted at any time."
+      },
+      {
+        "title": "Your rights",
+        "body": "You can request a copy of what is held about you, ask for corrections, or ask for deletion. Email the address below and it will be actioned."
+      }
+    ]
+  },
+
+  "terms": {
+    "heading": "Terms",
+    "updated": "2026-08-07",
+    "answer": "These terms cover use of this website and the general basis on which work is carried out. Individual engagements are governed by their own written scope, which takes precedence over anything here.",
+    "sections": [
+      {
+        "title": "No guarantee of results",
+        "body": "AI answer engines are non-deterministic: the same question can produce different answers and different cited sources on consecutive runs. No guarantee is made about rankings, positions, citation counts, mention rates or revenue outcomes. What is contracted for is a defined scope of work and transparent measurement of its results."
+      },
+      {
+        "title": "Timelines are estimates",
+        "body": "Timeframes stated on this site are drawn from published industry research and are indicative, not promises. Actual movement depends on your starting position, your market's competitiveness, the state of your website, and changes made by the engines themselves — which are outside anyone's control."
+      },
+      {
+        "title": "Scope and changes",
+        "body": "Each engagement has a written scope. Work outside it is quoted separately in writing before it begins. Audit engagements include one round of report revisions; further rounds are billable."
+      },
+      {
+        "title": "Payment",
+        "body": "Audits are payable in full before work starts. Implementation projects are split 50% on commencement and 50% on delivery. Monitoring retainers are payable monthly in advance with a three-month minimum term, because the validation cycle for this work is itself three to six months."
+      },
+      {
+        "title": "Your responsibilities",
+        "body": "Implementation requires timely access to your website and reasonably prompt review of drafts. Where access or approvals are delayed, timelines move accordingly. You are responsible for the accuracy of factual claims about your own services, credentials and pricing."
+      },
+      {
+        "title": "Deliverables and ownership",
+        "body": "On payment, the audit report, roadmap and prompt set are yours to use however you wish, including with another vendor. Methodology, templates and internal tooling remain the property of this practice."
+      },
+      {
+        "title": "Content on this site",
+        "body": "Statistics quoted on this site are attributed to their original sources, which are linked. This site does not display client names, logos or testimonials, and will not until real ones exist with written permission."
+      },
+      {
+        "title": "Liability",
+        "body": "To the extent permitted by law, liability arising from an engagement is limited to the fees paid for that engagement. Nothing here excludes liability that cannot lawfully be excluded."
+      }
+    ]
+  }
+}

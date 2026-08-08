@@ -1,0 +1,37 @@
+{
+  "header": [
+    { "label": "Services", "href": "/services" },
+    { "label": "How it works", "href": "/how-it-works" },
+    { "label": "Glossary", "href": "/glossary" },
+    { "label": "FAQ", "href": "/faq" },
+    { "label": "About", "href": "/about" }
+  ],
+  "footer": [
+    {
+      "heading": "Services",
+      "links": [
+        { "label": "AI Visibility Audit", "href": "/services/ai-visibility-audit" },
+        { "label": "Answer Engine Optimization", "href": "/services/answer-engine-optimization" },
+        { "label": "Generative Engine Optimization", "href": "/services/generative-engine-optimization" },
+        { "label": "Visibility Monitoring", "href": "/services/visibility-monitoring" }
+      ]
+    },
+    {
+      "heading": "Learn",
+      "links": [
+        { "label": "How it works", "href": "/how-it-works" },
+        { "label": "Glossary", "href": "/glossary" },
+        { "label": "FAQ", "href": "/faq" }
+      ]
+    },
+    {
+      "heading": "Company",
+      "links": [
+        { "label": "About", "href": "/about" },
+        { "label": "Contact", "href": "/contact" },
+        { "label": "Privacy", "href": "/privacy" },
+        { "label": "Terms", "href": "/terms" }
+      ]
+    }
+  ]
+}

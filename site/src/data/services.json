@@ -1,0 +1,119 @@
+{
+  "hub": {
+    "heading": "Services",
+    "answer": "Three services that work as a ladder. Most engagements start with the audit, because measurement has to come before anything else. Implementation executes the roadmap the audit produces. Monitoring keeps the measurement running so movement is provable rather than asserted."
+  },
+
+  "services": [
+    {
+      "slug": "ai-visibility-audit",
+      "name": "AI Visibility Audit",
+      "badge": "Most engagements start here",
+      "summary": "Exactly where you stand in AI answers, and what to fix first.",
+      "price": "$1,500",
+      "priceNote": "Fixed price, fixed scope. Paid upfront.",
+      "duration": "2 weeks from prompt-set sign-off",
+      "answer": "A fixed-scope diagnostic. We build a prompt set from the questions your patients actually ask, run it across five AI engines under controlled conditions, and report how often you are named and cited against three named competitors. You get a prioritised fix roadmap that is yours to keep.",
+      "deliverables": [
+        "Baseline mention rate and citation share, per engine",
+        "Competitive position against three named competitors",
+        "Screenshot evidence of every gap found",
+        "Diagnosis across access, extractability and trust",
+        "A prioritised fix roadmap, ranked by expected movement against effort",
+        "The prompt set itself, documented and versioned"
+      ],
+      "inScope": ["Measurement", "Diagnosis", "Recommendations"],
+      "outOfScope": ["Implementing the fixes"],
+      "note": "The roadmap is yours regardless of what happens next. Execute it yourself, hand it to your existing agency, or bring it back to us.",
+      "process": [
+        { "step": "Kickoff", "detail": "Confirm services, competitors, target area and patient profile." },
+        { "step": "Prompt set", "detail": "Build 40-50 prompts across five categories. You sign off before anything is measured." },
+        { "step": "Baseline run", "detail": "Three runs per prompt across five engines under fixed conditions." },
+        { "step": "Technical audit", "detail": "Crawler access, rendering, structured data, canonicals, sitemap." },
+        { "step": "Off-site audit", "detail": "Entity consistency, directories, review presence, third-party references." },
+        { "step": "Roadmap", "detail": "Findings prioritised by expected movement, delivered with a walkthrough call." }
+      ]
+    },
+
+    {
+      "slug": "answer-engine-optimization",
+      "name": "Answer Engine Optimization",
+      "badge": "On-site",
+      "summary": "Making your content the answer an engine extracts and displays.",
+      "price": "From $5,000",
+      "priceNote": "Scoped from the audit roadmap.",
+      "duration": "4-6 week sprint",
+      "answer": "On-site work so AI engines can reach your content and lift clean answers from it. That means unblocking crawlers, restructuring pages so each section leads with a direct answer, implementing valid structured data, and making every claim self-contained enough to be quoted without surrounding context.",
+      "deliverables": [
+        "AI crawler access configured and verified in server logs",
+        "Rendering blockers removed so content appears in raw HTML",
+        "Key pages restructured answer-first",
+        "Headings reshaped into the questions patients actually ask",
+        "Structured data implemented and validated: Organization, Service, FAQPage, DefinedTerm, BreadcrumbList",
+        "Comparison content converted to genuine semantic tables",
+        "Entity consistency corrected across the web"
+      ],
+      "note": "We target lower-competition questions first. Those are what move in four to twelve weeks and become the first evidence that the work is landing.",
+      "process": [
+        { "step": "Unblock", "detail": "Crawler access, rendering, indexability. Propagates within days." },
+        { "step": "Structure", "detail": "Answer-first rewrites on the pages that matter, question-shaped headings." },
+        { "step": "Mark up", "detail": "Structured data implemented and validated." },
+        { "step": "Verify", "detail": "Server logs confirm crawlers are now reaching the site daily." }
+      ]
+    },
+
+    {
+      "slug": "generative-engine-optimization",
+      "name": "Generative Engine Optimization",
+      "badge": "Off-site",
+      "summary": "Becoming a source the engines trust enough to cite.",
+      "price": "From $5,000",
+      "priceNote": "Scoped from the audit roadmap. Often runs alongside AEO.",
+      "duration": "Begins in week 3, continues for months",
+      "answer": "Off-site work that builds the authority causing an engine to name you when it writes an answer. Engines synthesise from sources they trust, so this means earning independent references, correcting your presence across platforms, and publishing data that is genuinely worth citing.",
+      "deliverables": [
+        "Directory and platform listings claimed and made consistent",
+        "Review presence strategy across the platforms engines actually read",
+        "Inclusion outreach to the third-party lists engines cite for your category",
+        "An original data asset built with you — the single most citable thing you can own",
+        "Editorial and digital PR outreach",
+        "Knowledge base assessment, where notability is genuinely met"
+      ],
+      "note": "This is the slower half and the more defensible one. Off-site authority is difficult to build and equally difficult for a competitor to undo.",
+      "process": [
+        { "step": "Fix the footprint", "detail": "Claim listings, correct inconsistencies, standardise how you appear." },
+        { "step": "Earn references", "detail": "Outreach for inclusion in the sources engines pull from for your category." },
+        { "step": "Publish something citable", "detail": "Original data from your own practice. Engines cite numbers nobody else has." },
+        { "step": "Sustain", "detail": "Freshness and new placements every month. Visibility decays without upkeep." }
+      ]
+    },
+
+    {
+      "slug": "visibility-monitoring",
+      "name": "Visibility Monitoring",
+      "badge": "Ongoing",
+      "summary": "The same prompt set, the same conditions, every month.",
+      "price": "From $1,500/month",
+      "priceNote": "Measurement only. With execution, from $3,000/month. Three-month minimum.",
+      "duration": "Monthly, reported from the first full cycle",
+      "answer": "Your prompt set re-run monthly under identical conditions, reported per engine against baseline and against named competitors. Because AI answers fluctuate, a single reading means very little — the value is entirely in the trend line.",
+      "deliverables": [
+        "Fixed prompt set re-run monthly, same conditions every cycle",
+        "Mention rate and citation share per engine, versus baseline and last cycle",
+        "Competitor movement tracking",
+        "AI crawler activity from your server logs",
+        "A prioritised fix list — delivered, and executed on the higher tier",
+        "Quarterly content freshness pass"
+      ],
+      "note": "Three-month minimum, and the reason is honest: the validation cycle for this work is itself three to six months. A one-month engagement cannot show you anything meaningful.",
+      "process": [
+        { "step": "Re-run", "detail": "Full prompt set, identical conditions to the baseline." },
+        { "step": "Compare", "detail": "Deltas against baseline and against the previous cycle, per engine." },
+        { "step": "Report", "detail": "Four pages. What moved, what did not, and why." },
+        { "step": "Act", "detail": "Next cycle's priorities, ranked." }
+      ]
+    }
+  ],
+
+  "pricingNote": "Fixed-scope work carries a fixed price. Where scope genuinely varies with the size of your prompt set, the number of engines and how much execution we take on, the price is quoted exactly before anything starts. No hourly billing and no open-ended ranges."
+}

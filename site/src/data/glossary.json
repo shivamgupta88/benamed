@@ -1,0 +1,140 @@
+{
+  "heading": "AI search glossary",
+  "answer": "Plain definitions for the terms used in AI search visibility work. The vocabulary in this field is genuinely unsettled — several of these terms are used interchangeably by different practitioners, and where that is true it is noted.",
+
+  "terms": [
+    {
+      "slug": "answer-engine-optimization",
+      "term": "Answer Engine Optimization (AEO)",
+      "short": "Structuring content so an AI engine extracts it and displays it as the direct answer.",
+      "long": "Answer Engine Optimization is the practice of structuring content so that a search or AI system can lift it directly and present it as the answer to a question. The target surfaces are featured snippets, People Also Ask boxes, voice assistants and Google AI Overviews. The work is mostly on-site: answer-first paragraphs, question-shaped headings, semantic HTML, genuine tables and valid structured data. Because the changes are within your control, AEO generally produces movement faster than off-site work.",
+      "related": ["generative-engine-optimization", "extraction", "answer-first-writing"]
+    },
+    {
+      "slug": "generative-engine-optimization",
+      "term": "Generative Engine Optimization (GEO)",
+      "short": "Building the authority that makes an AI engine cite you when it writes an answer.",
+      "long": "Generative Engine Optimization is the practice of becoming a source that large language models reference and cite when synthesising a response. The target surfaces are ChatGPT, Claude, Perplexity and Gemini. Unlike AEO, most of the work happens off your own site: independent references, review presence, consistent entity information across the web, and original data worth citing. GEO is slower to move than AEO and correspondingly harder for a competitor to undo.",
+      "related": ["answer-engine-optimization", "synthesis", "citation-share"]
+    },
+    {
+      "slug": "answer-engine",
+      "term": "Answer engine",
+      "short": "A system that responds to a question with a synthesised answer rather than a list of links.",
+      "long": "An answer engine returns a written response to a query instead of a ranked list of web pages. ChatGPT, Perplexity, Claude, Gemini and Google AI Overviews are the dominant examples. The commercial consequence is structural: a list of links can accommodate ten results, while a synthesised answer typically names three or four sources and omits everything else entirely.",
+      "related": ["synthesis", "retrieval-layer"]
+    },
+    {
+      "slug": "mention-rate",
+      "term": "Mention rate",
+      "short": "The percentage of prompt runs in which a business is named by the engine.",
+      "long": "Mention rate is calculated as the number of runs where the business is named, divided by the total number of runs, expressed as a percentage. It is measured per engine and never averaged across engines. Mention rate is a looser measure than citation share because a business can be named in prose without being given a linked source, but it is a useful early indicator because it tends to move first.",
+      "related": ["citation-share", "prompt-set"]
+    },
+    {
+      "slug": "citation-share",
+      "term": "Citation share",
+      "short": "The percentage of prompt runs in which a business is cited with a link.",
+      "long": "Citation share is the number of runs where the business appears as a linked, cited source divided by total runs, per engine. It is a stricter and more commercially meaningful measure than mention rate, because a citation is what carries a click. Research from Princeton and Georgia Tech has put click-through rates on cited links in AI overviews in the region of 8 to 12 per cent, while uncited competitors receive nothing.",
+      "related": ["mention-rate", "prompt-set"]
+    },
+    {
+      "slug": "prompt-set",
+      "term": "Prompt set",
+      "short": "A fixed, versioned collection of prompts used to measure AI visibility repeatably.",
+      "long": "A prompt set is a frozen list of typically 40 to 50 questions, written the way real buyers phrase them, used as the measurement instrument for AI visibility. It must remain unchanged throughout an engagement, because comparability against the baseline is the entire point. New prompts are introduced as a new version, documented and reported separately rather than merged retroactively. Each prompt is normally run three times per engine to account for non-determinism.",
+      "related": ["non-determinism", "baseline", "mention-rate"]
+    },
+    {
+      "slug": "non-determinism",
+      "term": "Non-determinism",
+      "short": "The property that the same prompt can return different answers on consecutive runs.",
+      "long": "Large language models are non-deterministic: asking an identical question twice can produce different wording, different recommendations and different cited sources. This has two practical consequences for AI visibility work. First, a single check is not evidence, which is why measurement requires multiple runs per prompt under controlled conditions. Second, no vendor can honestly guarantee a position or ranking inside an AI answer.",
+      "related": ["prompt-set", "baseline"]
+    },
+    {
+      "slug": "baseline",
+      "term": "Baseline",
+      "short": "The measured starting position, captured before any optimisation work begins.",
+      "long": "A baseline is the recorded mention rate and citation share per engine, taken before any changes are made. Without one, later improvements cannot be demonstrated and any claim of progress is an assertion rather than a measurement. Establishing a defensible baseline requires the prompt set to be signed off in advance, so that the scope of what was measured is not disputed afterwards.",
+      "related": ["prompt-set", "citation-share"]
+    },
+    {
+      "slug": "retrieval-layer",
+      "term": "Retrieval layer",
+      "short": "The live web search an AI engine performs at query time.",
+      "long": "The retrieval layer is the part of an AI system that fetches current web content when a question is asked, rather than relying on what the model learned during training. Perplexity retrieves on essentially every query; ChatGPT Search and Google AI Overviews also pull live content. Because this layer reads the live web, a newly published or newly accessible source can begin influencing answers within hours to weeks. It is the only layer that optimisation work can realistically target.",
+      "related": ["training-layer", "ai-crawler"]
+    },
+    {
+      "slug": "training-layer",
+      "term": "Training layer",
+      "short": "A model's baseline knowledge, fixed until the model is retrained.",
+      "long": "The training layer is the knowledge embedded in a model's weights during training. It only changes when the model is retrained or fine-tuned, a cycle measured in months. Claude, for example, anchors primarily to its training corpus and reaches for live search only when retrieval is triggered. No optimisation work can change the training layer, which is why honest practitioners make no promises about it.",
+      "related": ["retrieval-layer", "non-determinism"]
+    },
+    {
+      "slug": "ai-crawler",
+      "term": "AI crawler",
+      "short": "A bot that fetches web pages on behalf of an AI company, for training or live retrieval.",
+      "long": "AI crawlers include GPTBot, OAI-SearchBot and ChatGPT-User from OpenAI, ClaudeBot from Anthropic, PerplexityBot, Google-Extended and Applebot-Extended, plus CCBot which feeds Common Crawl. They respect robots.txt, which means a single misconfigured line can make a site invisible to an entire engine. Crawl volumes are substantial: a 30-day server log study observed GPTBot hitting sites thousands of times per day, so access changes become visible in logs almost immediately.",
+      "related": ["robots-txt", "llms-txt", "retrieval-layer"]
+    },
+    {
+      "slug": "robots-txt",
+      "term": "robots.txt",
+      "short": "A root-level file telling crawlers which parts of a site they may fetch.",
+      "long": "robots.txt is a plain text file at the root of a domain that declares crawler permissions. In AI visibility work it is the first thing to check, because a disallow rule affecting GPTBot, ClaudeBot or PerplexityBot will prevent that engine from ever reading the site regardless of how good the content is. Many sites block AI crawlers unintentionally, often through a default configuration nobody reviewed.",
+      "related": ["ai-crawler", "llms-txt"]
+    },
+    {
+      "slug": "llms-txt",
+      "term": "llms.txt",
+      "short": "A proposed root-level file summarising a site in plain text for language models.",
+      "long": "llms.txt is a plain text file placed at a domain root, summarising what an organisation does and pointing to its canonical pages. Adoption across engines is not universal and its measured impact is not established in the way structured data's is. It is best treated as a low-cost, low-risk addition rather than a primary lever, and should not be sold as one.",
+      "related": ["robots-txt", "structured-data"]
+    },
+    {
+      "slug": "structured-data",
+      "term": "Structured data",
+      "short": "Machine-readable markup, usually JSON-LD, describing what a page contains.",
+      "long": "Structured data is standardised markup, typically written as JSON-LD following schema.org vocabulary, that tells machines what a page is about. Relevant types for this work include Organization, LocalBusiness, Service, FAQPage, DefinedTerm and BreadcrumbList. It supports both extraction and entity resolution. Two rules matter: it must validate, and it must only describe content that is genuinely visible on the page.",
+      "related": ["entity-consistency", "extraction"]
+    },
+    {
+      "slug": "entity-consistency",
+      "term": "Entity consistency",
+      "short": "Presenting identical business information everywhere it appears online.",
+      "long": "Entity consistency means the same business name, category, address and description appearing identically across your website, directories, review platforms and social profiles. Inconsistency makes it harder for an engine to resolve all these references as one organisation, which weakens every trust signal individually. It is unglamorous work and frequently the single largest fixable cause of an otherwise strong business being absent from AI answers.",
+      "related": ["structured-data", "generative-engine-optimization"]
+    },
+    {
+      "slug": "extraction",
+      "term": "Extraction",
+      "short": "An engine lifting text from a page more or less verbatim to answer a question.",
+      "long": "Extraction is the mechanism behind AEO: the engine identifies a passage that answers the question and presents it, often close to word for word. Content becomes extractable through answer-first structure, question-shaped headings, semantic HTML and self-contained statements. A paragraph that depends on the sentence before it to make sense is difficult to extract, because the engine may lift it alone.",
+      "related": ["answer-engine-optimization", "answer-first-writing", "synthesis"]
+    },
+    {
+      "slug": "synthesis",
+      "term": "Synthesis",
+      "short": "An engine blending several sources into one original answer.",
+      "long": "Synthesis is the mechanism behind GEO: rather than quoting one page, the engine reads several sources and writes a new answer drawing on all of them, citing some. Being useful to synthesis depends less on any single page and more on being independently referenced, consistently described, and worth citing. This is why GEO work is largely off-site.",
+      "related": ["generative-engine-optimization", "extraction", "citation-share"]
+    },
+    {
+      "slug": "answer-first-writing",
+      "term": "Answer-first writing",
+      "short": "Putting a direct, self-contained answer immediately after a heading, before any detail.",
+      "long": "Answer-first writing places a direct 40 to 60 word answer immediately beneath each heading, with elaboration following afterwards. It is the highest-leverage on-page change available for AEO, because it gives an engine a clean, complete passage to extract without needing surrounding context. It also tends to improve the page for human readers, who typically want the answer before the explanation.",
+      "related": ["extraction", "answer-engine-optimization"]
+    },
+    {
+      "slug": "ai-overviews",
+      "term": "AI Overviews (AIO)",
+      "short": "Google's AI-generated answer summaries shown above search results.",
+      "long": "AI Overviews is Google's feature that presents a generated summary, with citations, above the conventional results. It is worth being precise here: AI Overviews is a platform feature, not a discipline. Anyone offering AIO services as a distinct methodology is describing a surface rather than a strategy — the underlying work is AEO and GEO.",
+      "related": ["answer-engine-optimization", "answer-engine"]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+---
+import Base from '../layouts/Base.astro';
+import AnswerBlock from '../components/AnswerBlock.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Faq from '../components/Faq.astro';
+import { allFaqs, faqs } from '../lib/content';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: allFaqs().map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<Base
+  title="FAQ"
+  description="How AI search visibility differs from SEO, how long results take, why no guarantees are offered, and exactly how the measurement method works."
+  schemas={[schema]}
+>
+  <section class="section section--flush" style="padding-top:2.5rem">
+    <div class="wrap">
+      <Breadcrumbs trail={[{ label: 'FAQ', href: '/faq' }]} />
+      <AnswerBlock
+        heading={faqs.heading}
+        answer={faqs.answer}
+        eyebrow="Questions"
+        level={1}
+      />
+    </div>
+  </section>
+
+  {
+    faqs.groups.map((group, i) => (
+      <section class={`section ${i % 2 === 1 ? 'section--alt' : ''}`}>
+        <div class="wrap">
+          <h2 style="font-size:var(--fs-xl)">{group.name}</h2>
+          <div style="margin-top:1.5rem">
+            <Faq items={group.items} />
+          </div>
+        </div>
+      </section>
+    ))
+  }
+
+  <CtaBand />
+</Base>

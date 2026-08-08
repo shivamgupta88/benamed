@@ -1,0 +1,47 @@
+{
+  "note": "Every statistic must carry a real source. Never add an entry without one.",
+  "stats": [
+    {
+      "id": "ai-search-growth",
+      "value": "42.8%",
+      "label": "year-over-year growth in AI search visits, against 2.4% for Google",
+      "source": "3way.social",
+      "sourceUrl": "https://3way.social/blog/how-to-make-money-with-aeo-geo/"
+    },
+    {
+      "id": "citation-ctr",
+      "value": "8-12%",
+      "label": "click-through rate on links cited in AI overviews, while uncited competitors are absent entirely",
+      "source": "Princeton / Georgia Tech research, via Something Inc.",
+      "sourceUrl": "https://somethinginc.com/blog/how-generative-search-engines-cite-brands/"
+    },
+    {
+      "id": "engine-overlap",
+      "value": "11%",
+      "label": "overlap in cited domains when the same prompt runs across four AI engines",
+      "source": "Topify",
+      "sourceUrl": "https://topify.ai/blog/llm-citation-patterns-ai-platforms"
+    },
+    {
+      "id": "aeo-investment",
+      "value": "94%",
+      "label": "of surveyed practitioners planned to increase AEO investment in 2026",
+      "source": "Conductor",
+      "sourceUrl": "https://www.conductor.com/academy/state-of-aeo-geo-report/"
+    },
+    {
+      "id": "wikipedia-speed",
+      "value": "28 vs 52 days",
+      "label": "time to first ChatGPT citation, with a detailed Wikipedia entry versus without",
+      "source": "Topify",
+      "sourceUrl": "https://topify.ai/blog/llm-citation-patterns-ai-platforms"
+    },
+    {
+      "id": "gptbot-crawl",
+      "value": "~4,200",
+      "label": "GPTBot hits per site per day observed in a 30-day server log study",
+      "source": "Digital Applied",
+      "sourceUrl": "https://www.digitalapplied.com/blog/agentic-crawler-behavior-30-day-site-log-study"
+    }
+  ]
+}

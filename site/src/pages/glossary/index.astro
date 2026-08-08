@@ -1,0 +1,63 @@
+---
+import Base from '../../layouts/Base.astro';
+import AnswerBlock from '../../components/AnswerBlock.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { absoluteUrl, glossary, site, sortedTerms } from '../../lib/content';
+
+const terms = sortedTerms();
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTermSet',
+  '@id': `${site.url}/glossary#termset`,
+  name: 'AI search glossary',
+  description: glossary.answer,
+  url: absoluteUrl('/glossary'),
+  hasDefinedTerm: terms.map((t) => ({
+    '@type': 'DefinedTerm',
+    name: t.term,
+    description: t.short,
+    url: absoluteUrl(`/glossary/${t.slug}`),
+  })),
+};
+---
+
+<Base
+  title="AI search glossary"
+  description="Plain definitions for AEO, GEO, citation share, prompt sets, retrieval layers, AI crawlers and the rest of the vocabulary used in AI search visibility work."
+  schemas={[schema]}
+>
+  <section class="section section--flush" style="padding-top:2.5rem">
+    <div class="wrap">
+      <Breadcrumbs trail={[{ label: 'Glossary', href: '/glossary' }]} />
+      <AnswerBlock
+        heading={glossary.heading}
+        answer={glossary.answer}
+        eyebrow="Reference"
+        level={1}
+      />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <dl class="grid grid--2">
+        {
+          terms.map((term) => (
+            <a href={`/glossary/${term.slug}`} class="card">
+              <dt>
+                <h2 style="font-size:var(--fs-lg)">{term.term}</h2>
+              </dt>
+              <dd style="margin-top:0.5rem">
+                <p>{term.short}</p>
+              </dd>
+            </a>
+          ))
+        }
+      </dl>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>
